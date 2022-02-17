@@ -21,7 +21,7 @@ const createCustomers = async (req, res) => {
     });
     await customer.save();
     const customers = await Customer.find();
-    res.json({ customer, customers, msg: "created a student" });
+    res.json({ customer, customers, msg: "created a customer" });
   } catch (error) {
     return res.status(500).json({ msg: error.message });
   }
@@ -41,7 +41,7 @@ const updateCustomer = async (req, res) => {
       }
     );
     const customers = await Customer.find();
-    res.json({ msg: "updated a student", customers });
+    res.json({ msg: "updated a Customer", customers });
   } catch (error) {
     return res.status(500).json({ msg: error.message });
   }
@@ -52,7 +52,7 @@ const deleteCustomer = async (req, res) => {
     await Customer.findByIdAndDelete(req.params.id);
     const customers = await Customer.find();
 
-    res.json({ customers, msg: "Deleted a student" });
+    res.json({ customers, msg: "Deleted a Customer" });
   } catch (error) {
     return res.status(500).json({ msg: error.message });
   }

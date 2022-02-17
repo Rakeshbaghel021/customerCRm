@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EdifForm from "./EditForm";
+import { SortAscendingIcon } from "@heroicons/react/solid";
 
 function Customers({ customers, setCustomers }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -58,7 +59,7 @@ function Customers({ customers, setCustomers }) {
                         scope="col"
                         className="cursor-pointer px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
                       >
-                        First Name{" "}
+                        First Name
                       </th>
                     </tr>
                   ) : selected == "email" ? (
@@ -78,9 +79,10 @@ function Customers({ customers, setCustomers }) {
                           setSortbyLastName(false);
                         }}
                         scope="col"
-                        className="cursor-pointer px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+                        className="flex gap-4 cursor-pointer px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
                       >
                         First Name{" "}
+                        <SortAscendingIcon className="md:w-5 md:mr-2 " />
                       </th>
                       <th
                         scope="col"
@@ -89,9 +91,12 @@ function Customers({ customers, setCustomers }) {
                           setSortbyFirstName(false);
                           setSortbyLastName(true);
                         }}
-                        className="cursor-pointer px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+                        className=" cursor-pointer px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
                       >
-                        Last Name
+                        <span className="flex gap-4">
+                          Last Name{" "}
+                          <SortAscendingIcon className="md:w-5 md:mr-2 " />
+                        </span>
                       </th>
                       <th
                         scope="col"
