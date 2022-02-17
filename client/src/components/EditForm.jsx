@@ -27,7 +27,7 @@ const EdifForm = ({
 
   const handleOk = async () => {
     await axios
-      .put(`http://localhost:4000/customer/${person._id}`, {
+      .put(`/customer/${person._id}`, {
         firstName,
         lastName,
         mobile,

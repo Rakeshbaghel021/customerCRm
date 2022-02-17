@@ -12,7 +12,7 @@ function Customer({ setCustomers }) {
 
   const handleSubmit = async () => {
     await axios
-      .post("http://localhost:4000/customer", {
+      .post("/customer", {
         firstName,
         lastName,
         mobile,

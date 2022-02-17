@@ -11,13 +11,11 @@ function Customers({ customers, setCustomers }) {
   const [sortbyLastName, setSortbyLastName] = useState(false);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/customers")
-      .then((res) => setCustomers(res.data));
+    axios.get("/customers").then((res) => setCustomers(res.data));
   }, []);
   const onDelete = async (id) => {
     await axios
-      .delete(`http://localhost:4000/customer/${id}`)
+      .delete(`/customer/${id}`)
       .then((res) => setCustomers(res.data.customers));
   };
 
